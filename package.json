@@ -19,5 +19,8 @@
     "open": "^8.2.1",
     "parcel": "^2.2.0",
     "prettier": "2.6.2"
+  },
+  "dependencies": {
+    "apexcharts": "^3.35.3"
   }
 }
