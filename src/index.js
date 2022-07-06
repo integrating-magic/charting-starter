@@ -7,12 +7,12 @@ window.loadChart = function (json) {
 
   //GLOBAL OPTIONS!!!!
   const options = {
-    colors: ["#026E81", "#0099DD", "#FF9933"],
-    stroke: {
-      curve: "smooth",
-      width: 1,
-      dashArray: 5,
-    },
+    // colors: ["#026E81", "#0099DD", "#FF9933"],
+    // stroke: {
+    //   curve: "smooth",
+    //   width: 1,
+    //   dashArray: 5,
+    // },
     // grid: { show: false },
     markers: { size: 9 },
     chart: {
