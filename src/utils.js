@@ -11,7 +11,7 @@ export const setChartSpecificOptions = (dataXYOptions, type, series) => {
   return chartType ? reconfigureForPieCharts(series) : dataXYOptions;
 };
 
-export const handleClick = (config, series) => {
+export const handleClick = (config, series, callback) => {
   const seriesNames = series.map((item) => item.name);
   const xAxisNames = series.map((item) => item.data.map((item) => item.x));
   const dataPointIndex = config.dataPointIndex;
@@ -19,7 +19,7 @@ export const handleClick = (config, series) => {
   const category = xAxisNames[seriesIndex][dataPointIndex];
   const seriesName = seriesNames[seriesIndex];
   const obj = { category, seriesName };
-  FileMaker.PerformScript("RetieveData", JSON.stringify(obj));
+  FileMaker.PerformScript(callback, JSON.stringify(obj));
 };
 
 export const events = {
