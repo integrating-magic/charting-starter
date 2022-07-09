@@ -21,6 +21,7 @@
     "prettier": "2.6.2"
   },
   "dependencies": {
-    "apexcharts": "^3.35.3"
+    "apexcharts": "^3.35.3",
+    "html2canvas": "^1.4.1"
   }
 }
