@@ -59,11 +59,11 @@ export const getImagesFromWebViewer = function () {
   chart.dataURI().then(sendImages);
 };
 
-export const saveImage = () => {
+export const saveImage = (callback) => {
   html2canvas(document.querySelector("#chart")).then((canvas) => {
     const img = canvas.toDataURL("image/png");
     console.log(img);
 
-    FileMaker.PerformScriptWithOption("Get Image", JSON.stringify(img), 5);
+    FileMaker.PerformScriptWithOption(callback, JSON.stringify(img), 5);
   });
 };
