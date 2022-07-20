@@ -8,22 +8,22 @@ window.loadChart = function (json) {
   //GLOBAL OPTIONS!!!!
 
   const options = {
-    // colors: ["#F7DF1E", "#1D91B2"],
+    colors: ["#F7DF1E", "#1D91B2"],
     // stroke: {
     //   curve: "smooth",
     //   width: 2,
     //   dashArray: 5,
     // },
-    // grid: { show: false },
+    grid: { show: false },
     // plotOptions: {
-    //   bar: { horizontal: true, dataLabels: { position: "bottom" } },
+    bar: { horizontal: true, dataLabels: { position: "bottom" } },
     // },
     // markers: { size: 3 },
-    // dataLabels: {
-    //   enabled: true,
-    //   background: { enabled: true, foreColor: "black" },
-    //   offsetX: 20,
-    // },
+    dataLabels: {
+      enabled: true,
+      background: { enabled: true, foreColor: "black" },
+      // offsetX: 20,
+    },
     // legend: {
     //   show: true,
     //   position: "left",
@@ -35,7 +35,7 @@ window.loadChart = function (json) {
       width: "100%",
       zoom: { enabled: false },
       height: 700,
-      // stacked: true,
+      stacked: true,
       events: {
         click: function (event, chartContext, config) {
           console.log("config");
