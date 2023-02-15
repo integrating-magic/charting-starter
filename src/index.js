@@ -1,5 +1,7 @@
+import setChartSpecificOptions, { handleClick, saveImage } from "./utils";
+
 import ApexCharts from "apexcharts";
-import { setChartSpecificOptions, handleClick, saveImage } from "./utils";
+
 let chart;
 window.loadChart = function (json) {
   const obj = JSON.parse(json);
@@ -9,33 +11,33 @@ window.loadChart = function (json) {
 
   const options = {
     colors: ["#F7DF1E", "#1D91B2"],
-    // stroke: {
-    //   curve: "smooth",
-    //   width: 2,
-    //   dashArray: 5,
-    // },
+    stroke: {
+      curve: "smooth",
+      width: 2,
+      dashArray: 5,
+    },
     grid: { show: false },
-    // plotOptions: {
-    bar: { horizontal: true, dataLabels: { position: "bottom" } },
-    // },
-    // markers: { size: 3 },
+    plotOptions: {
+      bar: { horizontal: true, dataLabels: { position: "bottom" } },
+    },
+    markers: { size: 3 },
     dataLabels: {
       enabled: true,
       background: { enabled: true, foreColor: "black" },
-      // offsetX: 20,
+      offsetX: 20,
     },
-    // legend: {
-    //   show: true,
-    //   position: "left",
-    //   horizontalAlign: "right",
-    // },
+    legend: {
+      show: true,
+      position: "left",
+      horizontalAlign: "right",
+    },
     chart: {
       toolbar: { show: false },
       type: type,
       width: "100%",
       zoom: { enabled: false },
       height: 700,
-      stacked: true,
+      // stacked: true,
       events: {
         click: function (event, chartContext, config) {
           console.log("config");

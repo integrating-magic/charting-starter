@@ -10,6 +10,7 @@
     "build": "parcel build index.html",
     "upload": "node ./scripts/upload",
     "build:upload": "npm run build && npm run upload",
+    "deploy-to-fm": "npm run build && npm run upload",
     "openfile": "node ./scripts/openFileOnServer",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +18,7 @@
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "open": "^8.2.1",
-    "parcel": "^2.2.0",
+    "parcel": "^2.8.2",
     "prettier": "2.6.2"
   },
   "dependencies": {

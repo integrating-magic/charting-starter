@@ -1,6 +1,6 @@
 import html2canvas from "html2canvas";
 
-export const reconfigureForPieCharts = (data) => {
+const reconfigureForPieCharts = (data) => {
   const d = data[0].data;
   let series, labels;
   series = d.map((item) => item.y);
@@ -8,12 +8,12 @@ export const reconfigureForPieCharts = (data) => {
   return { series, labels };
 };
 
-export const setChartSpecificOptions = (dataXYOptions, type, series) => {
+export default  setChartSpecificOptions = (dataXYOptions, type, series) => {
   const chartType = type === "pie" || type === "donut" || type === "radialBar";
   return chartType ? reconfigureForPieCharts(series) : dataXYOptions;
 };
 
-export const handleClick = (config, series, callback) => {
+const handleClick = (config, series, callback) => {
   const seriesNames = series.map((item) => item.name);
   const xAxisNames = series.map((item) => item.data.map((item) => item.x));
   const dataPointIndex = config.dataPointIndex;
@@ -24,7 +24,7 @@ export const handleClick = (config, series, callback) => {
   FileMaker.PerformScript(callback, JSON.stringify(obj));
 };
 
-export const events = {
+const events = {
   events: {
     dataPointSelection: function (event, chartContext, config) {
       handleClick(config, series);
@@ -32,7 +32,7 @@ export const events = {
   },
 };
 
-export const getImagesFromWebViewer = function () {
+const getImagesFromWebViewer = function () {
   let scriptName = "Get Image";
   let sendImages = function ({ imgURI, blob }) {
     alert("SEND");
@@ -59,11 +59,19 @@ export const getImagesFromWebViewer = function () {
   chart.dataURI().then(sendImages);
 };
 
-export const saveImage = (callback) => {
+const saveImage = (callback) => {
   html2canvas(document.querySelector("#chart")).then((canvas) => {
     const img = canvas.toDataURL("image/png");
     console.log(img);
 
     FileMaker.PerformScriptWithOption(callback, JSON.stringify(img), 5);
   });
+};
+
+export {
+  reconfigureForPieCharts,
+  handleClick,
+  saveImage,
+  events,
+  getImagesFromWebViewer,
 };
