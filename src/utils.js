@@ -8,7 +8,7 @@ const reconfigureForPieCharts = (data) => {
   return { series, labels };
 };
 
-export default  setChartSpecificOptions = (dataXYOptions, type, series) => {
+const setChartSpecificOptions = (dataXYOptions, type, series) => {
   const chartType = type === "pie" || type === "donut" || type === "radialBar";
   return chartType ? reconfigureForPieCharts(series) : dataXYOptions;
 };
@@ -71,6 +71,7 @@ const saveImage = (callback) => {
 export {
   reconfigureForPieCharts,
   handleClick,
+  setChartSpecificOptions,
   saveImage,
   events,
   getImagesFromWebViewer,

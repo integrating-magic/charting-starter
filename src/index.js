@@ -1,4 +1,4 @@
-import setChartSpecificOptions, { handleClick, saveImage } from "./utils";
+import { setChartSpecificOptions, handleClick, saveImage } from "./utils";
 
 import ApexCharts from "apexcharts";
 
